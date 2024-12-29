@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Suhani!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .card {
+            width: 300px;
+            height: 400px;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            position: relative;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform: scale(0);
+            animation: openCard 2s forwards;
+        }
+
+        @keyframes openCard {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .card h1 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .card .message {
+            font-size: 1.2rem;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .card .btn {
+            padding: 10px 20px;
+            background-color: #ff6ec7;
+            color: white;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .card .btn:hover {
+            background-color: #ff3e7f;
+        }
+
+        .cake-section {
+            display: none;
+            text-align: center;
+        }
+
+        .cake img {
+            width: 150px;
+            height: 150px;
+        }
+
+        .countdown {
+            font-size: 2rem;
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        .message-after {
+            display: none;
+            font-size: 1.5rem;
+            color: #fff;
+            margin-top: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .balloon {
+            font-size: 3rem;
+            color: #ff69b4;
+            margin-top: 20px;
+            animation: floatBalloon 3s ease-in-out infinite;
+        }
+
+        @keyframes floatBalloon {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>🎉 Happy Birthday Suhani! 🎉</h1>
+        <p class="message">Click below to start the fun! 🎂</p>
+        <button class="btn" onclick="startCelebration()">Open the Card</button>
+
+        <div class="cake-section" id="cakeSection">
+            <div class="cake">
+                <img src="https://cdn.pixabay.com/photo/2020/01/25/16/31/birthday-4781176_960_720.jpg" alt="Cake with candles">
+                <p>Make a wish and blow out the candles! 🎂</p>
+                <p class="countdown" id="countdown">5</p>
+                <button class="btn" onclick="blowCandles()">Blow Candles!</button>
+            </div>
+        </div>
+
+        <div class="message-after" id="messageAfter">
+            <p>Yay! You blew out the candles! 🕯️</p>
+            <p>Wishing you a year full of happiness and love! 💖</p>
+        </div>
+
+        <div class="balloon">🎈</div>
+    </div>
+
+    <script>
+        let countdownTimer;
+        let countdownValue = 5;
+
+        function startCelebration() {
+            // Hide the initial card message and show the cake section
+            document.querySelector('.message').style.display = 'none';
+            document.querySelector('.btn').style.display = 'none';
+            document.getElementById('cakeSection').style.display = 'block';
+
+            // Start the countdown
+            countdownTimer = setInterval(function() {
+                document.getElementById('countdown').innerText = countdownValue;
+                countdownValue--;
+                if (countdownValue < 0) {
+                    clearInterval(countdownTimer);
+                }
+            }, 1000);
+        }
+
+        function blowCandles() {
+            // Show the after-message when the candles are blown out
+            document.getElementById('messageAfter').style.display = 'block';
+            document.getElementById('cakeSection').style.display = 'none';
+
+            // Show a cute birthday message after blowing out the candles
+            setTimeout(function() {
+                alert('🎉 Your wish is coming true! May this year be full of blessings and joy! 🎂💖');
+            }, 1000);
+        }
+    </script>
+
+</body>
+</html>
