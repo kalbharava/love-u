@@ -8,7 +8,7 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #f2f2f2;
+            background-color: #f7e1d7;
             font-family: 'Comic Sans MS', cursive, sans-serif;
             display: flex;
             justify-content: center;
@@ -18,13 +18,13 @@
         }
 
         .card {
-            width: 300px;
-            height: 400px;
-            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            width: 350px;
+            height: 450px;
+            background: linear-gradient(to right, #ff6f61, #ffcc5c);
             border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
             position: relative;
-            padding: 20px;
+            padding: 30px;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -59,8 +59,8 @@
         }
 
         .card .btn {
-            padding: 10px 20px;
-            background-color: #ff6ec7;
+            padding: 12px 25px;
+            background-color: #ff7d85;
             color: white;
             font-size: 1.2rem;
             border: none;
@@ -70,7 +70,7 @@
         }
 
         .card .btn:hover {
-            background-color: #ff3e7f;
+            background-color: #ff5370;
         }
 
         .cake-section {
@@ -79,8 +79,8 @@
         }
 
         .cake img {
-            width: 150px;
-            height: 150px;
+            width: 200px;
+            height: 200px;
         }
 
         .countdown {
@@ -115,12 +115,12 @@
 
     <div class="card">
         <h1>🎉 Happy Birthday Suhani! 🎉</h1>
-        <p class="message">Click below to start the fun! 🎂</p>
+        <p class="message">Click below to start the celebration! 🎂</p>
         <button class="btn" onclick="startCelebration()">Open the Card</button>
 
         <div class="cake-section" id="cakeSection">
             <div class="cake">
-                <img src="https://cdn.pixabay.com/photo/2020/01/25/16/31/birthday-4781176_960_720.jpg" alt="Cake with candles">
+                <img src="https://i.pinimg.com/originals/a2/cc/1c/a2cc1c0ae6358fae8408df527612fcdd.gif" alt="Birthday Cake with Candles">
                 <p>Make a wish and blow out the candles! 🎂</p>
                 <p class="countdown" id="countdown">5</p>
                 <button class="btn" onclick="blowCandles()">Blow Candles!</button>
